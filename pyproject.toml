@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "burnmap"
+version = "0.1.0"
+description = "Burned area and burn severity analysis of Sentinel-2 indices exported from Google Earth Engine"
+requires-python = ">=3.10"
+dependencies = [
+    "affine>=2.4",
+    "numpy",
+    "pandas",
+    "rasterio",
+    "scipy",
+    "scikit-learn",
+    "matplotlib",
+]
+
+[project.optional-dependencies]
+app = ["streamlit>=1.60", "folium", "streamlit-folium", "plotly"]
+dev = ["pytest", "streamlit>=1.60", "folium", "streamlit-folium", "plotly"]
+
+[tool.setuptools]
+packages = ["burnmap"]
